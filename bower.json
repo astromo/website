@@ -1,0 +1,6 @@
+{
+  "name": "astromo-website",
+  "dependencies": {
+    "foundation": "zurb/bower-foundation"
+  }
+}
