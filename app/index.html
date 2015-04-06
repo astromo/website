@@ -4,6 +4,9 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Foundation project</title>
+
+    <link href='http://fonts.googleapis.com/css?family=Ubuntu:400,500' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,600,700' rel='stylesheet' type='text/css'>
     <!-- build:css css/vendor.min.css -->
     <!-- bower:css -->
     <!-- endbower -->
@@ -17,27 +20,21 @@
 
     <!-- Top nav bar -->
     <nav class="row">
-      <img src="images/astromo_logo.svg" alt="">
+      <img class="astromo__logo" src="images/astromo@2x.png" alt="ASTROMO">
       <ul class="menu__items">
-        <li>Pricing</li>
-        <li>Services</li>
-        <li>Blog</li>
-        <li>The Crew</li>
+        <li><a href="#">Pricing</a></li>
+        <li><a href="#">Services</a></li>
+        <li><a href="#">Blog</a></li>
+        <li><a href="#">The Crew</a></li>
       </ul>
     </nav>
 
-    <header>
-      <div class="catchphrase">
-        <h1>
-          Building an API is difficult
-        </h1>
-        <h2>
-          Focus on what's important instead
-        </h2>
-        <a href="#" class="callToAction">
-          Get in touch
-        </a>
+    <header class="astromo__header">
+      <div class="header__hero">
+        <h1 class="hero__title">Building an API is difficult</h1>
+        <h2 class="hero__subtitle">Focus on what's important instead</h2>
       </div>
+      <a href="#" class="button outline white call-to-action">Get in touch</a>
     </header>
 
     <!-- build:js js/vendor/vendor.min.js -->

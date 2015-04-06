@@ -1,6 +1,7 @@
 {
   "name": "astromo-website",
   "dependencies": {
-    "foundation": "zurb/bower-foundation"
+    "foundation": "zurb/bower-foundation",
+    "astromo-styles"    : "astromo/styles"
   }
 }

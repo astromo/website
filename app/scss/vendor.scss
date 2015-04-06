@@ -4,6 +4,7 @@
 
 @import "reset";
 @import "settings";
+@import "../bower_components/astromo-styles/astromo";
 
 // Make sure the charset is set appropriately
 @charset "UTF-8";
@@ -16,7 +17,7 @@
 // @import "foundation/components/block-grid";
 // @import "foundation/components/breadcrumbs";
 // @import "foundation/components/button-groups";
-// @import "foundation/components/buttons";
+@import "foundation/components/buttons";
 // @import "foundation/components/clearing";
 // @import "foundation/components/dropdown";
 // @import "foundation/components/dropdown-buttons";
@@ -46,3 +47,26 @@
 // @import "foundation/components/top-bar";
 // @import "foundation/components/offcanvas";
 // @import "foundation/components/visibility";
+
+.button {
+  @include button($bg: $green, $radius: 4px);
+  font-size: 16px;
+  padding: 10px 12px;
+  line-height: 22px;
+  border-style: none;
+}
+
+.button.outline {
+  background-color: transparent;
+  border: solid 1px $green;
+  color: $green;
+
+  &.white {
+    color: white;
+    border-color: white;
+    &:hover {
+      background: rgba(#fff, 0.1);
+    }
+  }
+
+}

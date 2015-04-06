@@ -1,4 +1,10 @@
 @import "mixins";
+@import "settings";
+@import "../bower_components/astromo-styles/astromo";
+
+body {
+  -webkit-font-smoothing: antialiased;
+}
 
 nav {
   $nav-height: 65px;
@@ -10,13 +16,12 @@ nav {
 
   z-index: 200;
 
-  img {
-    display: inline-block;
+  .astromo__logo {
     float: left;
 
-    margin-left: 2em;
+    margin-left: 30px;
+    width: 130px;
 
-    height: 27%;
     @include center-transform;
   }
 
@@ -25,23 +30,27 @@ nav {
     display: block;
     margin: 0;
 
-    line-height: $nav-height;
+    height: $nav-height;
 
     list-style-type: none;
 
     li {
+      font-size: 14px;
       display: inline-block;
-      margin-right: 2em;
+
+      > a {
+        color: #fff;
+        padding: 21.5px 16px;
+        display: block;
+      }
     }
   }
 }
 
-header {
+.astromo__header {
   color: #fff;
   position: relative;
-  height: 70vh;
-  min-height: 300px;
-  max-height: 600px;
+  height: 512px;
 
   text-align: center;
 
@@ -50,32 +59,35 @@ header {
   background-repeat: no-repeat;
   background-position: bottom center;
 
-  .catchphrase {
-    display: inline-block;
+  .header__hero {
+    position: relative;
     margin: 0 auto;
 
-    @include center-transform;
+    top: 41%;
 
-    h1, h2 {
+    left: 50%;
+    transform: translateX(-50%);
+
+    .hero__title { font-size: 32px; }
+
+    .hero__subtitle {
+      font-size: 21px;
+      font-family: $font-family-sans-serif;
+    }
+
+    .hero__title, .hero__subtitle {
       margin-top: 0;
       color: inherit;
     }
-
-    h1 {
-      font-weight: bold;
-    }
-
-    a.callToAction {
-      color: #fff;
-
-      display: inline-block;
-
-      border: 1px solid rgba(255, 255, 255, 0.9);
-      border-radius: 4px;
-
-      margin-top: 62px;
-
-      padding: 10px 12px;
-    }
   }
+
+  .call-to-action {
+    transform: translateX(-50%);
+    left: 50%;
+
+    position: absolute;
+    bottom: 115px;
+    margin-bottom: 0;
+  }
+
 }
