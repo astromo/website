@@ -1,6 +1,7 @@
 dist/
 node_modules/
 .tmp/
+app/css/
 app/bower_components/
 
 *.sublime-*
