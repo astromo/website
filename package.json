@@ -2,7 +2,6 @@
   "name": "astromo-website",
   "description": "",
   "version": "0.0.1",
-  "description": "",
   "homepage": "",
   "author": {
     "name": "",
@@ -27,5 +26,8 @@
     "grunt-usemin": "~3.0.0",
     "grunt-contrib-imagemin": "0.9.3",
     "grunt-newer": "~1.1.0"
+  },
+  "dependencies": {
+    "node-sass": "^2.1.1"
   }
 }
