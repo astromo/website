@@ -78,11 +78,11 @@ module.exports = function(grunt) {
     watch: {
       grunt: {
         files: ['Gruntfile.js'],
-        tasks: ['sass']
+        tasks: ['compile-sass']
       },
       sass: {
         files: '<%= app %>/scss/**/*.scss',
-        tasks: ['sass']
+        tasks: ['compile-sass']
       },
       livereload: {
         files: ['<%= app %>/**/*.html', '!<%= app %>/bower_components/**', '<%= app %>/js/**/*.js', '<%= app %>/css/**/*.css', '<%= app %>/images/**/*.{jpg,gif,svg,jpeg,png}'],
@@ -92,13 +92,23 @@ module.exports = function(grunt) {
       }
     },
 
+    autoprefixer: {
+      options: {},
+      all: {
+        expand: true,
+        flatten: true,
+        src: 'app/css/*.css',
+        dest: 'app/css/'
+      }
+    },
+
     connect: {
       app: {
         options: {
           port: 9000,
           base: '<%= app %>/',
           livereload: true,
-          hostname: '127.0.0.1'
+          hostname: '0.0.0.0'
         }
       },
       dist: {
@@ -107,7 +117,7 @@ module.exports = function(grunt) {
           base: '<%= dist %>/',
           keepalive: true,
           livereload: false,
-          hostname: '127.0.0.1'
+          hostname: '0.0.0.0'
         }
       }
     }
@@ -115,7 +125,7 @@ module.exports = function(grunt) {
   });
 
 
-  grunt.registerTask('compile-sass', ['sass']);
+  grunt.registerTask('compile-sass', ['sass', 'autoprefixer:all']);
 
   grunt.registerTask('default', ['compile-sass', 'connect:app', 'watch']);
   grunt.registerTask('server-dist', ['connect:dist']);
