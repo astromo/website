@@ -27,7 +27,7 @@ nav {
 
   ul.menu__items {
     float: right;
-    display: block;
+    display: none;
     margin: 0;
     margin-right: 15px;
 
@@ -45,13 +45,19 @@ nav {
         display: block;
       }
     }
+
+    @media #{$medium-up} {
+      display: block;
+    }
   }
 }
 
 .astromo__header {
   color: #fff;
   position: relative;
-  height: 512px;
+  height: 70vh;
+
+  overflow: hidden;
 
   text-align: center;
 
@@ -64,10 +70,7 @@ nav {
     position: relative;
     margin: 0 auto;
 
-    top: 41%;
-
-    left: 50%;
-    transform: translateX(-50%);
+    @include center-transform;
 
     .hero__title { font-size: 32px; }
 
@@ -80,15 +83,18 @@ nav {
       margin-top: 0;
       color: inherit;
     }
+
+    @media #{$small-only} {
+      margin-top: 20px;
+    }
   }
 
   .call-to-action {
-    transform: translateX(-50%);
-    left: 50%;
+    margin-top: 70px;
 
-    position: absolute;
-    bottom: 115px;
-    margin-bottom: 0;
+    @media #{$small-only} {
+      margin-top: 20px;
+    }
   }
 
 }
