@@ -111,6 +111,25 @@ section {
     text-align: center;
   }
 
+  &.normal {
+    @media #{$large-up} {
+      padding-left: 0;
+    }
+
+    @media #{$small-up} {
+      .columns.img {
+        margin-top: 33px;
+      }
+    }
+
+    @media #{$large-up} {
+      .columns.img {
+        margin-top: 0;
+        padding-left: 0;
+      }
+    }
+  }
+
   &.alternate {
     color: $almost-white;
     background-color: $almost-black;
