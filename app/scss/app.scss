@@ -97,15 +97,38 @@ section {
   padding: 33px;
   background-color: $white;
 
+  @media #{$large-up} {
+    padding-bottom: 0;
+  }
+
   &.center {
     text-align: center;
   }
 
   &.alternate {
+    color: $almost-white;
+    background-color: $almost-black;
 
+    h1, h2 {
+      color: $white;
+    }
+
+    @media #{$large-up} {
+      .columns.img {
+        padding-left: 0;
+      }
+    }
+
+    @media #{$small-up} {
+      h1 {
+        margin-top: 33px;
+      }
+    }
   }
 
   &.process {
+    padding-bottom: 33px;
+
     p { max-width: 400px; margin: 0 auto; }
 
     i {
@@ -175,6 +198,13 @@ section {
         }
       }
     }
+  }
+
+  img {
+    display: block;
+
+    width: 100%;
+    height: auto;
   }
 
   h1 {
