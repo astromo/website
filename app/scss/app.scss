@@ -109,12 +109,13 @@ section {
     p { max-width: 400px; margin: 0 auto; }
 
     i {
+      $radius: 120px;
       margin: 0 auto 30px auto;
 
       display: block;
-      height: 99px;
-      width: 99px;
-      line-height: 99px;
+      height: $radius;
+      width: $radius;
+      line-height: $radius;
       border-radius: 50%;
 
       font-size: 50px;
@@ -163,7 +164,15 @@ section {
       max-width: 80%;
 
       .trail {
-        margin-top: 50px;
+        margin-top: 80px;
+
+        h1:after {
+          content: " ";
+          border: solid 2px $green;
+          display: block;
+          width: 35px;
+          margin: 25px auto;
+        }
       }
     }
   }
