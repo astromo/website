@@ -70,4 +70,12 @@
     }
   }
 
+  &.green {
+    color: $green;
+    border-color: $green;
+    &:hover {
+      background: rgba($green, 0.1);
+    }
+  }
+
 }
