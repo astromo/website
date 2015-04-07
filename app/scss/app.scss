@@ -120,14 +120,19 @@ section {
     }
 
     @media #{$large-up} {
-      .columns.img {
-        padding-left: 0;
-      }
+      padding-right: 0;
     }
 
     @media #{$small-up} {
-      h1 {
+      .columns.img {
         margin-top: 33px;
+      }
+    }
+
+    @media #{$large-up} {
+      .columns.img {
+        margin-top: 0;
+        padding-right: 0;
       }
     }
   }
