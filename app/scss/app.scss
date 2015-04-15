@@ -100,7 +100,7 @@ nav {
 }
 
 section {
-  padding: 33px;
+  padding: 66px 33px;
   background-color: $white;
 
   @media #{$large-up} {
@@ -131,12 +131,12 @@ section {
   }
 
   &.alternate {
-    color: $almost-white;
-    background-color: $almost-black;
+    //color: $almost-white;
+    //background-color: $almost-black;
 
-    h1, h2 {
-      color: $white;
-    }
+    // h1, h2 {
+    //   color: $white;
+    // }
 
     @media #{$large-up} {
       padding-right: 0;
@@ -157,7 +157,10 @@ section {
   }
 
   &.process {
-    padding-bottom: 33px;
+    padding-bottom: 66px;
+
+    // background-color: $almost-white;
+    //border-bottom: 1px solid $almost-white;
 
     p { max-width: 400px; margin: 0 auto; }
 
