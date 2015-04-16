@@ -61,10 +61,10 @@ nav {
 
   text-align: center;
 
-  background-image: url("../images/background.jpg");
-  background-size: cover;
+  background: url("../images/hex_wallpaper.svg"), linear-gradient(to right, #18bc9c 0%,#00c4fa 100%);
+  background-size: contain;
   background-repeat: no-repeat;
-  background-position: bottom center;
+  background-position: bottom right;
 
   .header__hero {
     position: relative;
@@ -102,6 +102,10 @@ nav {
 section {
   padding: 66px 33px;
   background-color: $white;
+
+  margin: 0 auto;
+
+  max-width: 1200px !important;
 
   @media #{$large-up} {
     padding-bottom: 0;
@@ -159,8 +163,7 @@ section {
   &.process {
     padding-bottom: 66px;
 
-    // background-color: $almost-white;
-    //border-bottom: 1px solid $almost-white;
+    border-bottom: 1px solid $almost-white;
 
     p { max-width: 400px; margin: 0 auto; }
 
@@ -176,59 +179,60 @@ section {
 
       font-size: 50px;
 
-      color: #fff;
-      background-color: $green;
+      color: $green;
+      border: 2px solid $green;
+      //color: #fff;
+      //background-color: $green;
 
       overflow: hidden;
 
-      &::before {
-        // http://sandbox.juan-i.com/longshadows/
-        text-shadow:
-          rgb(22, 169, 140) 1px 1px,
-          rgb(22, 169, 140) 2px 2px,
-          rgb(22, 169, 140) 3px 3px,
-          rgb(22, 169, 140) 4px 4px,
-          rgb(22, 169, 140) 5px 5px,
-          rgb(22, 169, 140) 6px 6px,
-          rgb(22, 169, 140) 7px 7px,
-          rgb(22, 169, 140) 8px 8px,
-          rgb(22, 169, 140) 9px 9px,
-          rgb(22, 169, 140) 10px 10px,
-          rgb(22, 169, 140) 11px 11px,
-          rgb(22, 170, 140) 12px 12px,
-          rgb(22, 171, 141) 13px 13px,
-          rgb(22, 172, 142) 14px 14px,
-          rgb(22, 173, 143) 15px 15px,
-          rgb(22, 174, 144) 16px 16px,
-          rgb(22, 175, 145) 17px 17px,
-          rgb(22, 176, 146) 18px 18px,
-          rgb(22, 177, 147) 19px 19px,
-          rgb(23, 179, 148) 20px 20px,
-          rgb(23, 180, 149) 21px 21px,
-          rgb(23, 181, 150) 22px 22px,
-          rgb(23, 182, 151) 23px 23px,
-          rgb(23, 183, 152) 24px 24px,
-          rgb(23, 184, 153) 25px 25px,
-          rgb(23, 185, 154) 26px 26px,
-          rgb(23, 186, 155) 27px 27px,
-          rgb(24, 188, 156) 28px 28px;
-      }
+      // &::before {
+      //   // http://sandbox.juan-i.com/longshadows/
+      //   text-shadow:
+      //     rgb(22, 169, 140) 1px 1px,
+      //     rgb(22, 169, 140) 2px 2px,
+      //     rgb(22, 169, 140) 3px 3px,
+      //     rgb(22, 169, 140) 4px 4px,
+      //     rgb(22, 169, 140) 5px 5px,
+      //     rgb(22, 169, 140) 6px 6px,
+      //     rgb(22, 169, 140) 7px 7px,
+      //     rgb(22, 169, 140) 8px 8px,
+      //     rgb(22, 169, 140) 9px 9px,
+      //     rgb(22, 169, 140) 10px 10px,
+      //     rgb(22, 169, 140) 11px 11px,
+      //     rgb(22, 170, 140) 12px 12px,
+      //     rgb(22, 171, 141) 13px 13px,
+      //     rgb(22, 172, 142) 14px 14px,
+      //     rgb(22, 173, 143) 15px 15px,
+      //     rgb(22, 174, 144) 16px 16px,
+      //     rgb(22, 175, 145) 17px 17px,
+      //     rgb(22, 176, 146) 18px 18px,
+      //     rgb(22, 177, 147) 19px 19px,
+      //     rgb(23, 179, 148) 20px 20px,
+      //     rgb(23, 180, 149) 21px 21px,
+      //     rgb(23, 181, 150) 22px 22px,
+      //     rgb(23, 182, 151) 23px 23px,
+      //     rgb(23, 183, 152) 24px 24px,
+      //     rgb(23, 184, 153) 25px 25px,
+      //     rgb(23, 185, 154) 26px 26px,
+      //     rgb(23, 186, 155) 27px 27px,
+      //     rgb(24, 188, 156) 28px 28px;
+      // }
     }
 
     .trails {
       margin: 0 auto;
-      max-width: 80%;
 
       .trail {
         margin-top: 80px;
 
-        h1:after {
-          content: " ";
-          border: solid 2px $green;
-          display: block;
-          width: 35px;
-          margin: 25px auto;
-        }
+        // h1:after {
+        //   content: " ";
+        //   border: solid 1px $almost-white;
+        //   display: block;
+        //   width: 50px;
+        //   margin: 25px auto;
+        // }
       }
     }
   }
