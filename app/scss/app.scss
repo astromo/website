@@ -67,6 +67,7 @@ nav {
   width: 100%;
 
   overflow: hidden;
+  clip: rect(0, auto, auto, 0);
   clip-path: inset(0 0 0 0);
 
   text-align: center;
