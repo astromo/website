@@ -1,11 +1,13 @@
+@import "../bower_components/astromo-styles/astromo/colors";
+
 // Set foundation settings
 $font-family-sans-serif: "Open Sans", Helvetica, Roboto, Arial, sans-serif;
 
 $header-font-family: 'Ubuntu', sans-serif;
 $header-font-weight: normal;
 
-$header-font-color: #35404F;
-$body-font-color: #838383;
+$header-font-color: $darker-slate;
+$body-font-color: $grey;
 
 // Foundation by ZURB
 // foundation.zurb.com
