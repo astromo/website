@@ -7,7 +7,7 @@ body {
 }
 
 nav {
-  $nav-height: 65px;
+  $nav-height: 56px;
 
   color: #fff;
 
@@ -43,13 +43,20 @@ nav {
     list-style-type: none;
 
     li {
-      font-size: 14px;
+      height: $nav-height;
+      line-height: $nav-height;
+      font-size: rem-calc(14);
       display: inline-block;
 
       > a {
+        line-height: inherit;
         color: inherit;
-        padding: 21.5px 16px;
+        padding: 0 16px;
         display: block;
+      }
+
+      .plus {
+        display: inline-block;
       }
     }
 
@@ -88,10 +95,10 @@ nav {
 
     @include center-transform;
 
-    .hero__title { font-size: 32px; }
+    .hero__title { font-size: rem-calc(32); }
 
     .hero__subtitle {
-      font-size: 21px;
+      font-size: rem-calc(21);
       font-family: $font-family-sans-serif;
     }
 
@@ -201,7 +208,7 @@ section {
       line-height: $radius;
       border-radius: 50%;
 
-      font-size: 50px;
+      font-size: rem-calc(50);
 
       color: $green;
       border: 2px solid $green;
