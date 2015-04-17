@@ -183,6 +183,10 @@ section {
 
     border-bottom: 1px solid $almost-white;
 
+    h1:first-child {
+      font-size: rem-calc(30);
+    }
+
     p { max-width: 400px; margin: 0 auto; }
 
     i {

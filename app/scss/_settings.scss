@@ -1,12 +1,14 @@
 @import "../bower_components/astromo-styles/astromo/colors";
 
+@import "foundation/functions";
+
 // Set foundation settings
 $font-family-sans-serif: "Open Sans", Helvetica, Roboto, Arial, sans-serif;
 
 $header-font-family: 'Ubuntu', sans-serif;
 $header-font-weight: normal;
-
 $header-font-color: $darker-slate;
+
 $body-font-color: $grey;
 
 // Foundation by ZURB
@@ -66,7 +68,7 @@ $body-font-color: $grey;
 // $rem-base: 16px;
 
 // Allows the use of rem-calc() or lower-bound() in your settings
-@import "foundation/functions";
+// @import "foundation/functions";
 
 // The default font-size is set to 100% of the browser style sheet (usually 16px)
 // for compatibility with browser-based text zoom or user-set defaults.
