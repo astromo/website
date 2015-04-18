@@ -29,7 +29,9 @@ nav {
     margin-left: 30px;
     width: 130px;
 
-    @include center-transform;
+    margin-top: 20px;
+
+    // @include center-transform;
   }
 
   ul.menu__items {
@@ -45,7 +47,7 @@ nav {
     li {
       height: $nav-height;
       line-height: $nav-height;
-      font-size: rem-calc(14);
+      font-size: rem-calc(13);
       display: inline-block;
 
       > a {
@@ -80,7 +82,7 @@ nav {
   clip-path: inset(0 0 0 0);
 
   text-align: center;
-  text-shadow: 1px 1px 2px rgba(0,0,0,0.25);
+  // text-shadow: 1px 1px 2px rgba(0,0,0,0.25);
 
   background: url("../images/hex_wallpaper3.svg"), linear-gradient(to right, #18bc9c 0%,#00c4fa 100%);
   background-size: contain;
@@ -94,6 +96,7 @@ nav {
     margin: 0 auto;
 
     @include center-transform;
+    top: 60%;
 
     .hero__title { font-size: rem-calc(32); }
 
@@ -113,7 +116,7 @@ nav {
   }
 
   .call-to-action {
-    margin-top: 70px;
+    margin-top: 69px;
 
     @media #{$small-only} {
       margin-top: 20px;
