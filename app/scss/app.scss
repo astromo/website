@@ -30,8 +30,6 @@ nav {
     width: 130px;
 
     margin-top: 20px;
-
-    // @include center-transform;
   }
 
   ul.menu__items {
@@ -47,7 +45,7 @@ nav {
     li {
       height: $nav-height;
       line-height: $nav-height;
-      font-size: rem-calc(13);
+      font-size: rem-calc(14);
       display: inline-block;
 
       > a {
@@ -68,13 +66,16 @@ nav {
   }
 }
 
+$header-height: 450px;
+
 .astromo__header {
+
   position: absolute;
   top: 0;
   left: 0;
 
   color: #fff;
-  height: 400px;
+  height: $header-height;
   width: 100%;
 
   overflow: hidden;
@@ -84,7 +85,7 @@ nav {
   text-align: center;
   // text-shadow: 1px 1px 2px rgba(0,0,0,0.25);
 
-  background: url("../images/hex_wallpaper3.svg"), linear-gradient(to right, #18bc9c 0%,#00c4fa 100%);
+  background: url("../images/hex_wallpaper3.svg"), linear-gradient(to left, #18bc9c 0%,#00c4fa 100%);
   background-size: contain;
   background-repeat: no-repeat;
   background-position: bottom right;
@@ -126,7 +127,7 @@ nav {
 }
 
 .container {
-  padding-top: 400px;
+  padding-top: $header-height;
 }
 
 section {
