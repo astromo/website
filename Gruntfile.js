@@ -126,10 +126,11 @@ module.exports = function(grunt) {
 
 
   grunt.registerTask('compile-sass', ['sass', 'autoprefixer:all']);
+  grunt.registerTask('compile-sass', ['sass:dist', 'autoprefixer:all']);
 
   grunt.registerTask('default', ['compile-sass', 'connect:app', 'watch']);
   grunt.registerTask('server-dist', ['connect:dist']);
 
-  grunt.registerTask('dist', ['compile-sass', 'clean:dist', 'useminPrepare', 'copy:dist', 'newer:imagemin', 'concat', 'cssmin', 'uglify', 'usemin']);
+  grunt.registerTask('dist', ['compile-sass:dist', 'clean:dist', 'useminPrepare', 'copy:dist', 'newer:imagemin', 'concat', 'cssmin', 'uglify', 'usemin']);
 
 };
