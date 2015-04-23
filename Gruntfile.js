@@ -130,6 +130,6 @@ module.exports = function(grunt) {
   grunt.registerTask('default', ['compile-sass', 'connect:app', 'watch']);
   grunt.registerTask('server-dist', ['connect:dist']);
 
-  grunt.registerTask('publish', ['compile-sass', 'clean:dist', 'validate-js', 'useminPrepare', 'copy:dist', 'newer:imagemin', 'concat', 'cssmin', 'uglify', 'usemin']);
+  grunt.registerTask('dist', ['compile-sass', 'clean:dist', 'useminPrepare', 'copy:dist', 'newer:imagemin', 'concat', 'cssmin', 'uglify', 'usemin']);
 
 };
