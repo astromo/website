@@ -5,11 +5,13 @@
 // Set foundation settings
 $font-family-sans-serif: "Open Sans", Helvetica, Roboto, Arial, sans-serif;
 
-$header-font-family: 'Ubuntu', sans-serif;
-$header-font-weight: normal;
+$header-font-family: 'Gill Sans', 'Ubuntu', sans-serif;
+$header-font-weight: lighter;
 $header-font-color: $darker-slate;
 
 $body-font-color: $grey;
+$body-font-style: lighter;
+$paragraph-font-weight: lighter;
 
 $include-xl-html-grid-classes: true;
 

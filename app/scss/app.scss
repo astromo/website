@@ -99,10 +99,10 @@ $header-height: 450px;
     @include center-transform;
     top: 60%;
 
-    .hero__title { font-size: rem-calc(32); }
+    .hero__title { font-size: rem-calc(48); }
 
     .hero__subtitle {
-      font-size: rem-calc(21);
+      font-size: rem-calc(24);
       font-family: $font-family-sans-serif;
     }
 
@@ -212,7 +212,8 @@ section {
       line-height: $radius;
       border-radius: 50%;
 
-      font-size: rem-calc(50);
+      font-size: rem-calc(48);
+      font-style: normal;
 
       color: $green;
       border: 2px solid $green;
