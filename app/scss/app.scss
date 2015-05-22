@@ -70,6 +70,10 @@ $header-height: 450px;
 
 .astromo__header {
 
+  &.security {
+    background: #232228;
+  }
+
   position: absolute;
   top: 0;
   left: 0;
