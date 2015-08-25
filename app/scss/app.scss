@@ -23,19 +23,30 @@ nav {
     border-bottom: 1px solid $almost-white;
   }
 
+  a.astromo__logo__link {
+    display: inline-block;
+    float: left;
+
+    height: $nav-height;
+  }
+
   .astromo__logo {
     float: left;
 
-    margin-left: 30px;
-    width: 130px;
+    margin: 20px 30px 20px 30px;
 
-    margin-top: 20px;
+    width: 130px;
+  }
+
+  .columns {
+    height: $nav-height;
   }
 
   ul.menu__items {
     float: right;
     display: none;
     margin: 0;
+    margin-left: 15px;
     margin-right: 15px;
 
     height: $nav-height;
@@ -67,11 +78,46 @@ nav {
 }
 
 $header-height: 450px;
+$header-height-small: $header-height - 100px;
 
 .astromo__header {
 
+  @media #{$small-only} {
+    height: $header-height-small;
+  }
+
+  &:before {
+    display: block;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+
+    background-color: rgba(0,0,0,.45);
+  }
+
   &.security {
-    background: #232228;
+    background-image: url("../images/security.jpeg");
+    background-color: rgb(123, 156, 206);
+    background-size: cover;
+    background-position: center;
+
+    &:before {
+      content: " ";
+    }
+  }
+
+  &.university {
+    background-image: url("../images/university.jpeg");
+    background-color: rgb(195, 158, 122);
+    background-size: cover;
+    background-position: center;
+
+    &:before {
+      content: " ";
+    }
   }
 
   position: absolute;
@@ -119,7 +165,7 @@ $header-height: 450px;
     }
 
     @media #{$small-only} {
-      margin-top: 20px;
+      padding: 20px;
     }
   }
 
@@ -135,6 +181,10 @@ $header-height: 450px;
 
 .container {
   padding-top: $header-height;
+
+  @media #{$small-only} {
+    padding-top: $header-height-small;
+  }
 }
 
 section {
