@@ -156,6 +156,7 @@ nav {
 
   &:before {
     display: block;
+    content: " ";
 
     position: absolute;
     top: 0;
@@ -171,6 +172,10 @@ nav {
     background-size: contain;
     background-repeat: no-repeat;
     background-position: bottom right;
+
+    &:before {
+      content: none;
+    }
   }
 
   &.security {
