@@ -65,6 +65,8 @@ module.exports = function(grunt) {
       post: {
         src: [
           '<%= dist %>/css/**/*.css',
+          '<%= dist %>/js/**/*.js',
+          '!<%= dist %>/js/**/*.min.js',
           '!<%= dist %>/css/**/*.min.css'
         ]
       }
@@ -76,9 +78,11 @@ module.exports = function(grunt) {
           expand: true,
           cwd: '<%= app %>/',
           src: [
+            'images/**',
             'fonts/**',
+            'js/**/*.js',
             '!**/*.scss',
-            '!bower_components/**',
+            'bower_components/**',
             'favicon.ico',
             'robots.txt'
           ],
