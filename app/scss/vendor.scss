@@ -47,7 +47,7 @@
 // @import "foundation/components/tooltips";
 // @import "foundation/components/top-bar";
 // @import "foundation/components/offcanvas";
-// @import "foundation/components/visibility";
+@import "foundation/components/visibility";
 
 .button {
   @include button($bg: $green, $radius: 4px);

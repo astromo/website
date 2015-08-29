@@ -6,9 +6,29 @@ module.exports = function(grunt) {
 
 
   grunt.initConfig({
+
     pkg: grunt.file.readJSON('package.json'),
     app: 'app',
+    content: 'content',
     dist: 'dist',
+    vendor: 'app/bower_components',
+
+    assemble: {
+      options: {
+        plugins: ['assemble-markdown-pages'],
+        assets: 'dist/images',
+        layout: '<%= app %>/layouts/default.hbs',
+        partials: '<%= app %>/partials/**/*.hbs'
+      },
+      website: {
+        files: [{
+          cwd: '<%= content %>',
+          dest: '<%= dist %>/',
+          expand: true,
+          src: ['**/*.md']
+        }]
+      }
+    },
 
     sass: {
       options: {
@@ -19,8 +39,18 @@ module.exports = function(grunt) {
           outputStyle: 'extended'
         },
         files: {
-          '<%= app %>/css/app.css': '<%= app %>/scss/app.scss',
-          '<%= app %>/css/vendor.css': '<%= app %>/scss/vendor.scss'
+          '<%= dist %>/css/app.css': '<%= app %>/scss/app.scss',
+          '<%= dist %>/css/vendor.css': '<%= app %>/scss/vendor.scss'
+        }
+      }
+    },
+
+    'lodash': {
+      'build': {
+        'dest': '<%= vendor %>/lodash-custom/lodash.build.js',
+        'options': {
+          'modifier': 'modern',
+          'include': ['throttle']
         }
       }
     },
@@ -29,6 +59,15 @@ module.exports = function(grunt) {
       dist: {
         src: ['<%= dist %>/*']
       },
+      tmp: {
+        src: ['.tmp']
+      },
+      post: {
+        src: [
+          '<%= dist %>/css/**/*.css',
+          '!<%= dist %>/css/**/*.min.css'
+        ]
+      }
     },
 
     copy: {
@@ -38,7 +77,6 @@ module.exports = function(grunt) {
           cwd: '<%= app %>/',
           src: [
             'fonts/**',
-            '**/*.html',
             '!**/*.scss',
             '!bower_components/**',
             'favicon.ico',
@@ -47,6 +85,39 @@ module.exports = function(grunt) {
           dest: '<%= dist %>/'
         }]
       },
+      dev: {
+        files: [{
+          expand: true,
+          cwd: '<%= app %>/',
+          src: [
+            'fonts/**',
+            'images/**',
+            'js/**',
+            '!**/*.scss',
+            'bower_components/**',
+            'favicon.ico',
+            'robots.txt'
+          ],
+          dest: '<%= dist %>/'
+        }]
+      },
+      js: {
+        files: [{
+          expand: true,
+          cwd: '<%= app %>/',
+          src: [
+            'js/**'
+          ],
+          dest: '<%= dist %>/'
+        }]
+      },
+      images: {
+        files: [{
+          expand: true,
+          cwd: '<%= app %>',
+          src: ['<%= app %>/images/**']
+        }]
+      }
     },
 
     imagemin: {
@@ -69,7 +140,7 @@ module.exports = function(grunt) {
 
     useminPrepare: {
       html: [
-        '<%= app %>/*.html'
+        '<%= dist %>/**/*.html'
       ],
       options: {
         dest: '<%= dist %>'
@@ -84,7 +155,27 @@ module.exports = function(grunt) {
       }
     },
 
+    htmlmin: {
+      dist: {
+        options: {
+          removeComments: true,
+          collapseWhitespace: true,
+          removeOptionalTags: true,
+          useShortDoctype: true,
+          minifyJS: true, // Minify inline JS
+          minifyCSS: true // Minify inline css
+        },
+        expand: true,
+        cwd: '<%= dist %>',
+        src: ['**/*.html'],
+        dest: '<%= dist %>/'
+      }
+    },
+
     watch: {
+      options: {
+        livereload: true
+      },
       grunt: {
         files: ['Gruntfile.js'],
         tasks: ['compile-sass']
@@ -93,11 +184,25 @@ module.exports = function(grunt) {
         files: '<%= app %>/scss/**/*.scss',
         tasks: ['compile-sass']
       },
-      livereload: {
-        files: ['<%= app %>/**/*.html', '!<%= app %>/bower_components/**', '<%= app %>/js/**/*.js', '<%= app %>/css/**/*.css', '<%= app %>/images/**/*.{jpg,gif,svg,jpeg,png}'],
-        options: {
-          livereload: true
-        }
+      assemble: {
+        files: [
+          '<%= content %>/**/*.md',
+          '<%= app %>/partials/**/*.hbs',
+          '<%= app %>/layouts/**/*.hbs'
+        ],
+        tasks: ['assemble']
+      },
+      js: {
+        files: [
+          '<%= app %>/js/**/*.js'
+        ],
+        tasks: ['copy:js']
+      },
+      images: {
+        files: [
+          '<%= app %>/images/**/*.{jpg,gif,svg,jpeg,png}'
+        ],
+        tasks: ['copy:images']
       }
     },
 
@@ -106,27 +211,26 @@ module.exports = function(grunt) {
       all: {
         expand: true,
         flatten: true,
-        src: 'app/css/*.css',
-        dest: 'app/css/'
+        src: '<%= dist %>/css/*.css',
+        dest: '<%= dist %>/css/'
       }
     },
 
     connect: {
+      options: {
+        port: 9000,
+        base: '<%= dist %>/',
+        hostname: '0.0.0.0'
+      },
       app: {
         options: {
-          port: 9000,
-          base: '<%= app %>/',
-          livereload: true,
-          hostname: '0.0.0.0'
+          livereload: true
         }
       },
       dist: {
         options: {
-          port: 9001,
-          base: '<%= dist %>/',
-          keepalive: true,
           livereload: false,
-          hostname: '0.0.0.0'
+          keepalive: true
         }
       }
     }
@@ -134,12 +238,13 @@ module.exports = function(grunt) {
   });
 
 
-  grunt.registerTask('compile-sass', ['sass', 'autoprefixer:all']);
   grunt.registerTask('compile-sass', ['sass:dist', 'autoprefixer:all']);
 
-  grunt.registerTask('default', ['compile-sass', 'connect:app', 'watch']);
-  grunt.registerTask('server-dist', ['connect:dist']);
+  grunt.registerTask('serve', ['clean', 'compile-sass', 'assemble:website', 'lodash', 'copy:dev', 'connect:app', 'watch']);
+  grunt.registerTask('serve:dist', ['clean', 'dist', 'connect:dist']);
 
-  grunt.registerTask('dist', ['compile-sass:dist', 'clean:dist', 'useminPrepare', 'copy:dist', 'newer:imagemin', 'concat', 'cssmin', 'uglify', 'usemin']);
+  grunt.registerTask('dist', ['clean', 'compile-sass', 'assemble:website', 'useminPrepare', 'lodash', 'copy:dist', 'newer:imagemin', 'concat', 'cssmin', 'uglify', 'usemin', 'htmlmin:dist', 'clean:post']);
+
+  grunt.registerTask('default', ['serve']);
 
 };
