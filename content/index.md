@@ -3,6 +3,8 @@ title: API Design
 
 header-title: Building an API is difficult
 header-subtitle: Focus on what's important instead
+
+topic: index
 ---
 
 <section class="process center">

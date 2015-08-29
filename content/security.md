@@ -4,7 +4,7 @@ title: "Security"
 header-title: "Security is key"
 header-subtitle: "You're safe with us."
 
-topic: "security"
+topic: security
 ---
 
 <section class="process center">
