@@ -158,6 +158,16 @@ module.exports = function(grunt) {
       }
     },
 
+    filerev: {
+      options: {
+        algorithm: 'md5',
+        length: 8
+      },
+      images: {
+        src: '<%= dist %>/images/{,*/}*.{png,jpg,jpeg,gif,webp,svg}'
+      }
+    },
+
     htmlmin: {
       dist: {
         options: {
@@ -246,7 +256,7 @@ module.exports = function(grunt) {
   grunt.registerTask('serve', ['clean', 'compile-sass', 'assemble:website', 'lodash', 'copy:dev', 'connect:app', 'watch']);
   grunt.registerTask('serve:dist', ['clean', 'dist', 'connect:dist']);
 
-  grunt.registerTask('dist', ['clean', 'compile-sass', 'assemble:website', 'useminPrepare', 'lodash', 'copy:dist', 'imagemin', 'concat', 'cssmin', 'uglify', 'usemin', 'htmlmin:dist', 'clean:post']);
+  grunt.registerTask('dist', ['clean', 'compile-sass', 'assemble:website', 'useminPrepare', 'lodash', 'copy:dist', 'imagemin', 'concat', 'cssmin', 'uglify', 'filerev', 'usemin', 'htmlmin:dist', 'clean:post']);
 
   grunt.registerTask('default', ['serve']);
 

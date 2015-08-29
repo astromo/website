@@ -24,6 +24,7 @@
     "grunt-contrib-imagemin": "0.9.3",
     "grunt-contrib-uglify": "~0.8.0",
     "grunt-contrib-watch": "~0.6.1",
+    "grunt-filerev": "^2.3.1",
     "grunt-lodash": "^0.4.0",
     "grunt-newer": "~1.1.0",
     "grunt-sass": "~1.0.0",
