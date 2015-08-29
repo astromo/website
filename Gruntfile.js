@@ -78,7 +78,6 @@ module.exports = function(grunt) {
           expand: true,
           cwd: '<%= app %>/',
           src: [
-            'images/**',
             'fonts/**',
             'js/**/*.js',
             '!**/*.scss',
@@ -247,7 +246,7 @@ module.exports = function(grunt) {
   grunt.registerTask('serve', ['clean', 'compile-sass', 'assemble:website', 'lodash', 'copy:dev', 'connect:app', 'watch']);
   grunt.registerTask('serve:dist', ['clean', 'dist', 'connect:dist']);
 
-  grunt.registerTask('dist', ['clean', 'compile-sass', 'assemble:website', 'useminPrepare', 'lodash', 'copy:dist', 'newer:imagemin', 'concat', 'cssmin', 'uglify', 'usemin', 'htmlmin:dist', 'clean:post']);
+  grunt.registerTask('dist', ['clean', 'compile-sass', 'assemble:website', 'useminPrepare', 'lodash', 'copy:dist', 'imagemin', 'concat', 'cssmin', 'uglify', 'usemin', 'htmlmin:dist', 'clean:post']);
 
   grunt.registerTask('default', ['serve']);
 
