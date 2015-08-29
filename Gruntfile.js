@@ -64,10 +64,11 @@ module.exports = function(grunt) {
       },
       post: {
         src: [
+          '<%= dist %>/bower_components/**',
           '<%= dist %>/css/**/*.css',
           '<%= dist %>/js/**/*.js',
-          '!<%= dist %>/js/**/*.min.js',
-          '!<%= dist %>/css/**/*.min.css'
+          '!<%= dist %>/js/**/*.min*.js',
+          '!<%= dist %>/css/**/*.min*.css'
         ]
       }
     },
@@ -165,6 +166,12 @@ module.exports = function(grunt) {
       },
       images: {
         src: '<%= dist %>/images/{,*/}*.{png,jpg,jpeg,gif,webp,svg}'
+      },
+      js: {
+        src: '<%= dist %>/js/**/*.js'
+      },
+      css: {
+        src: '<%= dist %>/css/**/*.css'
       }
     },
 
