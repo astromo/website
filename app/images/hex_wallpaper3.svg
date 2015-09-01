@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="852px" height="468px" viewBox="0 0 852 468" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <!-- Generator: Sketch 3.3 (11970) - http://www.bohemiancoding.com/sketch -->
+    <title>Banner Hex Tiles Suble</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Banners" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <g id="Banner-Hex-Tiles-Subtle" sketch:type="MSArtboardGroup" transform="translate(-570.000000, -12.000000)" stroke-linecap="square" stroke-opacity="0.3" stroke="#FFFFFF">
+            <g id="Banner-Hex-Tiles" sketch:type="MSLayerGroup" transform="translate(0.000000, -120.000000)">
+                <g id="Banner-Hex-Tiles-Suble" sketch:type="MSShapeGroup">
+                    <path d="M1179.275,452.75 L1119.25,487.247126 L1119.25,556.241379 L1179.275,590.738506 L1239.3,556.241379 L1239.3,487.247126 L1179.275,452.75 Z" id="fill" transform="translate(1179.275000, 521.744253) rotate(-90.000000) translate(-1179.275000, -521.744253) "></path>
+                    <path d="M1044.3975,501.75 L1005.25,524.248563 L1005.25,569.24569 L1044.3975,591.744253 L1083.545,569.24569 L1083.545,524.248563 L1044.3975,501.75 Z" id="fill-copy-2" transform="translate(1044.397500, 546.747126) rotate(-90.000000) translate(-1044.397500, -546.747126) "></path>
+                    <path d="M1321.00625,322.75 L1233.25,373.184626 L1233.25,474.053879 L1321.00625,524.488506 L1408.7625,474.053879 L1408.7625,373.184626 L1321.00625,322.75 Z" id="fill-copy" transform="translate(1321.006250, 423.619253) rotate(-90.000000) translate(-1321.006250, -423.619253) "></path>
+                    <path d="M998.25,292.75 L911.25,342.75 L911.25,442.75 L998.25,492.75 L1085.25,442.75 L1085.25,342.75 L998.25,292.75 Z" id="outline" transform="translate(998.250000, 392.750000) rotate(-90.000000) translate(-998.250000, -392.750000) "></path>
+                    <path d="M998.25,119.75 L911.25,169.75 L911.25,269.75 L998.25,319.75 L1085.25,269.75 L1085.25,169.75 L998.25,119.75 Z" id="outline-copy-4" transform="translate(998.250000, 219.750000) rotate(-90.000000) translate(-998.250000, -219.750000) "></path>
+                    <path d="M849.25,206.75 L762.25,256.75 L762.25,356.75 L849.25,406.75 L936.25,356.75 L936.25,256.75 L849.25,206.75 Z" id="outline-copy" transform="translate(849.250000, 306.750000) rotate(-90.000000) translate(-849.250000, -306.750000) "></path>
+                    <path d="M670.25,482.75 L583.25,532.75 L583.25,632.75 L670.25,682.75 L757.25,632.75 L757.25,532.75 L670.25,482.75 Z" id="outline-copy-6" transform="translate(670.250000, 582.750000) rotate(-90.000000) translate(-670.250000, -582.750000) "></path>
+                    <path d="M849.25,379.75 L762.25,429.75 L762.25,529.75 L849.25,579.75 L936.25,529.75 L936.25,429.75 L849.25,379.75 Z" id="outline-copy-5" transform="translate(849.250000, 479.750000) rotate(-90.000000) translate(-849.250000, -479.750000) "></path>
+                    <path d="M1147,206 L1060,256 L1060,356 L1147,406 L1234,356 L1234,256 L1147,206 Z" id="outline-copy-2" transform="translate(1147.000000, 306.000000) rotate(-90.000000) translate(-1147.000000, -306.000000) "></path>
+                    <path d="M1296,119 L1209,169 L1209,269 L1296,319 L1383,269 L1383,169 L1296,119 Z" id="outline-copy-3" transform="translate(1296.000000, 219.000000) rotate(-90.000000) translate(-1296.000000, -219.000000) "></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

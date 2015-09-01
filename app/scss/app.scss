@@ -2,80 +2,226 @@
 @import "settings";
 @import "../bower_components/astromo-styles/astromo";
 
+$nav-height: 56px;
+$nav-background: rgba(35,39,49,.95);
+
+$header-height: 450px;
+$header-height-small: $header-height - 100px;
+
+i {
+  user-select: none;
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+
 body {
   -webkit-font-smoothing: antialiased;
 }
 
-nav {
-  $nav-height: 65px;
+.nav-open {
+    nav {
+      height: $header-height !important;
 
-  color: #fff;
+      @media #{$small-only} {
+        height: $header-height-small !important;
+      }
+    }
+
+    nav:not(.alternate) {
+      background: $nav-background !important;
+    }
+}
+
+nav {
+  overflow: hidden;
+
+  text-align: center;
+  transition: background 0.5s cubic-bezier(0.28, 0.11, 0.32, 1), height 0.3s cubic-bezier(0.28, 0.11, 0.32, 1);
+
+  &:not(.alternate) {
+    background: $nav-background;
+    height: $nav-height;
+
+    color: #fff;
+  }
 
   position: fixed;
   height: $nav-height;
 
   z-index: 200;
 
+  > div.columns {
+    height: $nav-height;
+  }
+
+  &.visible {
+    background: none;
+  }
+
+  &.alternate {
+    color: $darker-slate;
+    z-index: 50;
+    background-color: rgba(255,255,255,0.95);
+    border-bottom: 1px solid $almost-white;
+  }
+
+  a.astromo__logo__link {
+    display: inline-block;
+    float: left;
+
+    height: 100%;
+  }
+
   .astromo__logo {
     float: left;
 
-    margin-left: 30px;
-    width: 130px;
+    margin: 20px 30px 20px 30px;
 
-    @include center-transform;
+    @media #{$small-only} {
+      margin-left: 10px;
+      margin-right: 10px;
+    }
+
+
+    width: 130px;
+  }
+
+  .columns {
+    height: 100%;
   }
 
   ul.menu__items {
     float: right;
-    display: none;
+    display: block;
     margin: 0;
+    margin-left: 15px;
     margin-right: 15px;
 
-    height: $nav-height;
+    height: 100%;
 
     list-style-type: none;
 
     li {
-      font-size: 14px;
+      height: 100%;
+      line-height: $nav-height;
+      font-size: rem-calc(14);
       display: inline-block;
 
       > a {
-        color: #fff;
-        padding: 21.5px 16px;
+        line-height: inherit;
+        color: inherit;
+        padding: 0 16px;
         display: block;
+      }
+
+      .plus {
+        display: inline-block;
       }
     }
 
-    @media #{$medium-up} {
+    @media #{$small-only} {
       display: block;
+      width: 100%;
+      margin: 0;
+
+      li {
+        display: block;
+      }
+    }
+  }
+
+  .icons.icon-menu {
+    display: inline-block;
+    float: right;
+
+    cursor: pointer;
+
+    text-align: right;
+
+    height: 100%;
+    width: $nav-height;
+    padding: 20px 15px 20px 15px;
+
+    @media #{$small-only} {
+      padding-left: 10px;
+      padding-right: 10px;
     }
   }
 }
 
 .astromo__header {
+
+  @media #{$small-only} {
+    height: $header-height-small;
+  }
+
+  &:before {
+    display: block;
+    content: " ";
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+
+    background-color: rgba(0,0,0,.45);
+  }
+
+  &.index {
+    background: url("../images/hex_wallpaper3.svg"), linear-gradient(to left, #18bc9c 0%,#00c4fa 100%) !important;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: bottom right;
+
+    &:before {
+      content: none;
+    }
+  }
+
+  &.security {
+    background-color: rgb(123, 156, 206);
+  }
+
+  &.university {
+    background-color: rgb(195, 158, 122);
+  }
+
+  position: absolute;
+  top: 0;
+  left: 0;
+
   color: #fff;
-  position: relative;
-  height: 70vh;
+  height: $header-height;
+  width: 100%;
+
+  background-size: cover;
+  background-position: center;
 
   overflow: hidden;
+  clip: auto; // clip: rect(0, auto, auto, 0);
+  clip-path: inset(0 0 0 0);
+  // Safari mask rendering fix
+  // (http://stackoverflow.com/questions/28488059/safari-rendering-bug-with-css-clip)
+  -webkit-mask-image: -webkit-linear-gradient(top, #ffffff 0%,#ffffff 100%);
 
   text-align: center;
+  // text-shadow: 1px 1px 2px rgba(0,0,0,0.25);
 
-  background-image: url("../images/background.jpg");
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: bottom center;
+  z-index: 200;
 
   .header__hero {
     position: relative;
     margin: 0 auto;
 
-    @include center-transform;
+    max-width: 600px;
 
-    .hero__title { font-size: 32px; }
+    @include center-transform;
+    top: 60%;
+
+    .hero__title { font-size: em-calc(48); }
 
     .hero__subtitle {
-      font-size: 21px;
+      font-size: em-calc(24);
       font-family: $font-family-sans-serif;
     }
 
@@ -85,12 +231,13 @@ nav {
     }
 
     @media #{$small-only} {
-      margin-top: 20px;
+      padding: 20px;
+      font-size: .8rem;
     }
   }
 
   .call-to-action {
-    margin-top: 70px;
+    margin-top: 69px;
 
     @media #{$small-only} {
       margin-top: 20px;
@@ -99,9 +246,21 @@ nav {
 
 }
 
+.container {
+  padding-top: $header-height;
+
+  @media #{$small-only} {
+    padding-top: $header-height-small;
+  }
+}
+
 section {
-  padding: 33px;
+  padding: 66px 33px;
   background-color: $white;
+
+  margin: 0 auto;
+
+  max-width: 1200px !important;
 
   @media #{$large-up} {
     padding-bottom: 0;
@@ -131,12 +290,12 @@ section {
   }
 
   &.alternate {
-    color: $almost-white;
-    background-color: $almost-black;
+    //color: $almost-white;
+    //background-color: $almost-black;
 
-    h1, h2 {
-      color: $white;
-    }
+    // h1, h2 {
+    //   color: $white;
+    // }
 
     @media #{$large-up} {
       padding-right: 0;
@@ -157,12 +316,18 @@ section {
   }
 
   &.process {
-    padding-bottom: 33px;
+    padding-bottom: 66px;
+
+    border-bottom: 1px solid $almost-white;
+
+    h1:first-child {
+      font-size: rem-calc(30);
+    }
 
     p { max-width: 400px; margin: 0 auto; }
 
     i {
-      $radius: 120px;
+      $radius: 114px;
       margin: 0 auto 30px auto;
 
       display: block;
@@ -171,61 +336,63 @@ section {
       line-height: $radius;
       border-radius: 50%;
 
-      font-size: 50px;
+      font-size: rem-calc(48);
+      font-style: normal;
 
-      color: #fff;
-      background-color: $green;
+      color: $green;
+      border: 2px solid $green;
+      //color: #fff;
+      //background-color: $green;
 
       overflow: hidden;
 
-      &::before {
-        // http://sandbox.juan-i.com/longshadows/
-        text-shadow:
-          rgb(22, 169, 140) 1px 1px,
-          rgb(22, 169, 140) 2px 2px,
-          rgb(22, 169, 140) 3px 3px,
-          rgb(22, 169, 140) 4px 4px,
-          rgb(22, 169, 140) 5px 5px,
-          rgb(22, 169, 140) 6px 6px,
-          rgb(22, 169, 140) 7px 7px,
-          rgb(22, 169, 140) 8px 8px,
-          rgb(22, 169, 140) 9px 9px,
-          rgb(22, 169, 140) 10px 10px,
-          rgb(22, 169, 140) 11px 11px,
-          rgb(22, 170, 140) 12px 12px,
-          rgb(22, 171, 141) 13px 13px,
-          rgb(22, 172, 142) 14px 14px,
-          rgb(22, 173, 143) 15px 15px,
-          rgb(22, 174, 144) 16px 16px,
-          rgb(22, 175, 145) 17px 17px,
-          rgb(22, 176, 146) 18px 18px,
-          rgb(22, 177, 147) 19px 19px,
-          rgb(23, 179, 148) 20px 20px,
-          rgb(23, 180, 149) 21px 21px,
-          rgb(23, 181, 150) 22px 22px,
-          rgb(23, 182, 151) 23px 23px,
-          rgb(23, 183, 152) 24px 24px,
-          rgb(23, 184, 153) 25px 25px,
-          rgb(23, 185, 154) 26px 26px,
-          rgb(23, 186, 155) 27px 27px,
-          rgb(24, 188, 156) 28px 28px;
-      }
+      // &::before {
+      //   // http://sandbox.juan-i.com/longshadows/
+      //   text-shadow:
+      //     rgb(22, 169, 140) 1px 1px,
+      //     rgb(22, 169, 140) 2px 2px,
+      //     rgb(22, 169, 140) 3px 3px,
+      //     rgb(22, 169, 140) 4px 4px,
+      //     rgb(22, 169, 140) 5px 5px,
+      //     rgb(22, 169, 140) 6px 6px,
+      //     rgb(22, 169, 140) 7px 7px,
+      //     rgb(22, 169, 140) 8px 8px,
+      //     rgb(22, 169, 140) 9px 9px,
+      //     rgb(22, 169, 140) 10px 10px,
+      //     rgb(22, 169, 140) 11px 11px,
+      //     rgb(22, 170, 140) 12px 12px,
+      //     rgb(22, 171, 141) 13px 13px,
+      //     rgb(22, 172, 142) 14px 14px,
+      //     rgb(22, 173, 143) 15px 15px,
+      //     rgb(22, 174, 144) 16px 16px,
+      //     rgb(22, 175, 145) 17px 17px,
+      //     rgb(22, 176, 146) 18px 18px,
+      //     rgb(22, 177, 147) 19px 19px,
+      //     rgb(23, 179, 148) 20px 20px,
+      //     rgb(23, 180, 149) 21px 21px,
+      //     rgb(23, 181, 150) 22px 22px,
+      //     rgb(23, 182, 151) 23px 23px,
+      //     rgb(23, 183, 152) 24px 24px,
+      //     rgb(23, 184, 153) 25px 25px,
+      //     rgb(23, 185, 154) 26px 26px,
+      //     rgb(23, 186, 155) 27px 27px,
+      //     rgb(24, 188, 156) 28px 28px;
+      // }
     }
 
     .trails {
       margin: 0 auto;
-      max-width: 80%;
 
       .trail {
         margin-top: 80px;
 
-        h1:after {
-          content: " ";
-          border: solid 2px $green;
-          display: block;
-          width: 35px;
-          margin: 25px auto;
-        }
+        // h1:after {
+        //   content: " ";
+        //   border: solid 1px $almost-white;
+        //   display: block;
+        //   width: 50px;
+        //   margin: 25px auto;
+        // }
       }
     }
   }

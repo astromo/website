@@ -1,11 +1,19 @@
+@import "../bower_components/astromo-styles/astromo/colors";
+
+@import "foundation/functions";
+
 // Set foundation settings
 $font-family-sans-serif: "Open Sans", Helvetica, Roboto, Arial, sans-serif;
 
-$header-font-family: 'Ubuntu', sans-serif;
-$header-font-weight: normal;
+$header-font-family: 'Gill Sans', 'Ubuntu', sans-serif;
+$header-font-weight: lighter;
+$header-font-color: $darker-slate;
 
-$header-font-color: #35404F;
-$body-font-color: #838383;
+$body-font-color: $grey;
+$body-font-style: lighter;
+$paragraph-font-weight: lighter;
+
+$include-xl-html-grid-classes: true;
 
 // Foundation by ZURB
 // foundation.zurb.com
@@ -64,7 +72,7 @@ $body-font-color: #838383;
 // $rem-base: 16px;
 
 // Allows the use of rem-calc() or lower-bound() in your settings
-@import "foundation/functions";
+// @import "foundation/functions";
 
 // The default font-size is set to 100% of the browser style sheet (usually 16px)
 // for compatibility with browser-based text zoom or user-set defaults.
@@ -282,8 +290,8 @@ $xxlarge-only: "#{$screen} and (min-width:#{lower-bound($xxlarge-range)}) and (m
 // $list-line-height: $paragraph-line-height;
 // $list-margin-bottom: $paragraph-margin-bottom;
 // $list-style-position: outside;
-// $list-side-margin: 1.1rem;
-// $list-ordered-side-margin: 1.4rem;
+$list-side-margin: 0; // 1.1rem;
+$list-ordered-side-margin: 0; // 1.4rem;
 // $list-side-margin-no-bullet: 0;
 // $list-nested-margin: rem-calc(20);
 // $definition-list-header-weight: $font-weight-bold;
