@@ -260,10 +260,10 @@ module.exports = function(grunt) {
 
   grunt.registerTask('compile-sass', ['sass:dist', 'autoprefixer:all']);
 
-  grunt.registerTask('serve', ['clean', 'compile-sass', 'assemble:website', 'lodash', 'copy:dev', 'connect:app', 'watch']);
+  grunt.registerTask('serve', ['clean', 'compile-sass', 'assemble:website', 'copy:dev', 'connect:app', 'watch']);
   grunt.registerTask('serve:dist', ['clean', 'dist', 'connect:dist']);
 
-  grunt.registerTask('dist', ['clean', 'compile-sass', 'assemble:website', 'useminPrepare', 'lodash', 'copy:dist', 'imagemin', 'concat', 'cssmin', 'uglify', 'filerev', 'usemin', 'htmlmin:dist', 'clean:post']);
+  grunt.registerTask('dist', ['clean', 'compile-sass', 'assemble:website', 'useminPrepare', 'copy:dist', 'imagemin', 'concat', 'cssmin', 'uglify', 'filerev', 'usemin', 'htmlmin:dist', 'clean:post']);
 
   grunt.registerTask('default', ['serve']);
 
