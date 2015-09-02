@@ -16,9 +16,15 @@ module.exports = function(grunt) {
     assemble: {
       options: {
         plugins: ['assemble-markdown-pages'],
+        helpers: ['helper-markdown-it'],
         assets: 'dist/images',
         layout: '<%= app %>/layouts/default.hbs',
-        partials: '<%= app %>/partials/**/*.hbs'
+        partials: '<%= app %>/partials/**/*.hbs',
+        'markdown-it': {
+          html: true,
+          linkify: true,
+          typographer: true
+        }
       },
       website: {
         files: [{
