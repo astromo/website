@@ -8,10 +8,8 @@ topic: university
 ---
 
 <section>
-  {{#markdown}}
 
   # University text goes here
   Get ready for some learning sessions!
 
-  {{/markdown}}
 </section>

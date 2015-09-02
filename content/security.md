@@ -8,23 +8,27 @@ topic: security
 ---
 
 <section class="process center">
-  <h1>We take security serious</h1>
-  <p>All data is transferred and encrypted through SSL.</p>
+
+  # We take security serious
+  All data is transferred and encrypted through SSL.
 
   <div class="row trails">
     <div class="large-4 columns trail">
-      <h1>SSL Security <img style="width: 79px;display: inline;vertical-align: text-bottom" src="https://www.gandi.net/static/images/ssl/GANDI_SSL_logo_A_std_en.png" alt=""></h1>
-      <p>Our servers are tested against all common SSL exploits to prevent data theft and attacks.</p>
-      <hr>
-      <ul>
-        <li>SSL with RSA 2048-bit key</li>
-        <li>We are using TLS 1.2</li>
-        <li>Secure Renegotiation</li>
-        <li>Downgrade attack prevention</li>
-        <li>Strict Transport Security (HSTS)</li>
-      </ul>
-      <hr>
-      <p>View our latest SSL Security Test: <a target="_new" href="https://www.ssllabs.com/ssltest/analyze.html?d=astromo.io&latest">SSL Report</a></p>
+
+      # SSL Security <img style="width: 79px;display: inline;vertical-align: text-bottom" src="https://www.gandi.net/static/images/ssl/GANDI_SSL_logo_A_std_en.png" alt="">
+      Our servers are tested against all common SSL exploits to prevent data theft and attacks.
+
+      ---
+
+      - SSL with RSA 2048-bit key
+      - We are using TLS 1.2
+      - Secure Renegotiation
+      - Downgrade attack prevention
+      - Strict Transport Security (HSTS)
+
+      ---
+
+      View our latest SSL Security Test: <a target="_new" href="https://www.ssllabs.com/ssltest/analyze.html?d=astromo.io&latest">SSL Report</a>
     </div>
     <div class="large-8 columns trail">
       <img src="{{assets}}/ssltest.png" alt="">
