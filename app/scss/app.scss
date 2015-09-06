@@ -168,14 +168,10 @@ nav {
   }
 
   &.index {
-    background: url("../images/hex_wallpaper3.svg"), linear-gradient(to left, #18bc9c 0%,#00c4fa 100%) !important;
-    background-size: contain;
+    // background: url("../images/hex_wallpaper3.svg"), linear-gradient(to left, #18bc9c 0%,#00c4fa 100%) !important;
+    background-size: cover;
     background-repeat: no-repeat;
-    background-position: bottom right;
-
-    &:before {
-      content: none;
-    }
+    background-position: center 70%;
   }
 
   &.security {
