@@ -1,35 +1,45 @@
-'use strict';
+'use strict'
 
-var $body = $('body');
-var $nav = $('nav:not(.alternate)');
+var select = document.querySelector.bind(document)
 
-var $nav_icon = $('nav i.icon-menu');
+var body = select('body')
+var nav = select('nav:not(.alternate)')
+var navIcon = select('nav i.icon-menu')
 
-var isInvisibleNav = false;
+var isInvisibleNav = false
 
-function checkScrollTop(scrollTop, $nav) {
+function checkScrollTop (scrollTop, nav) {
   if (scrollTop > 20) {
-    if (!isInvisibleNav) $nav.removeClass('visible');
-    isInvisibleNav = true;
+    if (!isInvisibleNav) nav.classList.remove('visible')
+    isInvisibleNav = true
   } else {
-    if (isInvisibleNav) $nav.addClass('visible');
-    isInvisibleNav = false;
+    if (isInvisibleNav) nav.classList.add('visible')
+    isInvisibleNav = false
   }
 }
 
-$(function() {
-  var scrollTop = $body.scrollTop();
+ready(function () {
 
-  checkScrollTop(scrollTop, $nav);
+  var scrollTop = body.scrollTop
 
-  $(window).on('scroll', function() {
-    scrollTop = $body.scrollTop();
+  checkScrollTop(scrollTop, nav)
 
-    checkScrollTop(scrollTop, $nav);
-  });
+  window.addEventListener('scroll', function () {
+    scrollTop = body.scrollTop
 
-  $nav_icon.on('click', function() {
-    $body.toggleClass('nav-open');
-  });
+    checkScrollTop(scrollTop, nav)
+  })
 
-});
+  navIcon.addEventListener('click', function () {
+    body.classList.toggle('nav-open')
+  })
+
+})
+
+function ready (fn) {
+  if (document.readyState !== 'loading') {
+    fn()
+  } else {
+    document.addEventListener('DOMContentLoaded', fn)
+  }
+}
