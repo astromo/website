@@ -4,13 +4,14 @@
   "version": "0.0.1",
   "homepage": "",
   "author": {
-    "name": "",
-    "email": ""
+    "name": "Michiel De Mey",
+    "email": "de.mey.michiel@gmail.com"
   },
   "repository": {
     "type": "git",
-    "url": ""
+    "url": "git@github.com:astromo/website.git"
   },
+  "license": "ISC",
   "devDependencies": {
     "grunt": "~0.4.5",
     "grunt-assemble": "^0.4.0",
