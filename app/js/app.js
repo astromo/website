@@ -4,7 +4,7 @@ var select = document.querySelector.bind(document)
 
 var body = select('body')
 var nav = select('nav:not(.alternate)')
-var navIcon = select('nav i.icon-menu')
+var navIcons = document.querySelectorAll('nav i.icon-menu')
 
 var isInvisibleNav = false
 
@@ -24,15 +24,18 @@ ready(function () {
 
   checkScrollTop(scrollTop, nav)
 
+  // add scroll listener to the window
   window.addEventListener('scroll', function () {
     scrollTop = body.scrollTop
-
     checkScrollTop(scrollTop, nav)
   })
 
-  navIcon.addEventListener('click', function () {
-    body.classList.toggle('nav-open')
-  })
+  // add click listeners to the menu icons
+  for (var i = navIcons.length - 1; i >= 0; i--) {
+    navIcons[i].addEventListener('click', function () {
+      body.classList.toggle('nav-open')
+    })
+  }
 
 })
 
