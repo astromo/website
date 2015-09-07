@@ -62,10 +62,6 @@ nav {
     z-index: 50;
     background-color: rgba(255,255,255,0.95);
     border-bottom: 1px solid $almost-white;
-
-    ul li > a {
-      color: $darker-slate;
-    }
   }
 
   a.astromo__logo__link {
@@ -112,6 +108,7 @@ nav {
 
       > a {
         line-height: inherit;
+        color: inherit;
         padding: 0 16px;
         display: block;
       }
