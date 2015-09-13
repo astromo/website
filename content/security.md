@@ -13,7 +13,7 @@ topic: security
 
   <div class="row trails">
     <div class="large-4 columns trail">
-      <h1>SSL Security <img style="width: 79px;display: inline;vertical-align: text-bottom" src="https://www.gandi.net/static/images/ssl/GANDI_SSL_logo_A_std_en.png" alt=""></h1>
+      <h1>SSL Security</h1>
       <p>Our servers are tested against all common SSL exploits to prevent data theft and attacks.</p>
       <hr>
       <ul>
