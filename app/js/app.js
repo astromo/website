@@ -19,14 +19,13 @@ function checkScrollTop (scrollTop, nav) {
 }
 
 ready(function () {
-
-  var scrollTop = body.scrollTop
+  var scrollTop = window.scrollY
 
   checkScrollTop(scrollTop, nav)
 
   // add scroll listener to the window
   window.addEventListener('scroll', function () {
-    scrollTop = body.scrollTop
+    scrollTop = window.scrollY
     checkScrollTop(scrollTop, nav)
   })
 
@@ -36,7 +35,6 @@ ready(function () {
       body.classList.toggle('nav-open')
     })
   }
-
 })
 
 function ready (fn) {
