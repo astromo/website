@@ -1,8 +1,8 @@
 {
   "name": "astromo-website",
   "dependencies": {
-    "foundation": "zurb/bower-foundation",
+    "foundation-sites": "^6.0.6",
     "astromo-styles": "astromo/styles",
-    "simple-line-icons": "~2.2.1"
+    "simple-line-icons": "^2.2.3"
   }
 }
