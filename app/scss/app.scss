@@ -2,7 +2,11 @@
 @import "settings";
 @import "../bower_components/astromo-styles/astromo";
 
+@import 'util/util';
+@import 'components/visibility';
+
 $nav-height: 56px;
+$nav-width: 100%;
 $nav-background: rgba(35,39,49,.95);
 
 $header-height: 450px;
@@ -17,11 +21,15 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
+p {
+  font-weight: lighter;
+}
+
 .nav-open {
     nav {
       height: $header-height !important;
 
-      @media #{$small-only} {
+      @include breakpoint(small only) {
         height: $header-height-small !important;
       }
     }
@@ -46,6 +54,7 @@ nav {
 
   position: fixed;
   height: $nav-height;
+  width: $nav-width;
 
   z-index: 200;
 
@@ -76,7 +85,7 @@ nav {
 
     margin: 20px 30px 20px 30px;
 
-    @media #{$small-only} {
+    @include breakpoint(small only) {
       margin-left: 10px;
       margin-right: 10px;
     }
@@ -107,6 +116,7 @@ nav {
       display: inline-block;
 
       > a {
+        color: inherit;
         line-height: inherit;
         color: inherit;
         padding: 0 16px;
@@ -118,7 +128,7 @@ nav {
       }
     }
 
-    @media #{$small-only} {
+    @include breakpoint(small only) {
       display: block;
       width: 100%;
       margin: 0;
@@ -141,7 +151,7 @@ nav {
     width: $nav-height;
     padding: 20px 15px 20px 15px;
 
-    @media #{$small-only} {
+    @include breakpoint(small only) {
       padding-left: 10px;
       padding-right: 10px;
     }
@@ -150,7 +160,7 @@ nav {
 
 .astromo__header {
 
-  @media #{$small-only} {
+  @include breakpoint(small only) {
     height: $header-height-small;
   }
 
@@ -214,10 +224,10 @@ nav {
     @include center-transform;
     top: 60%;
 
-    .hero__title { font-size: em-calc(48); }
+    .hero__title { font-size: -zf-bp-to-em(48); }
 
     .hero__subtitle {
-      font-size: em-calc(24);
+      font-size: -zf-bp-to-em(24);
       font-family: $font-family-sans-serif;
     }
 
@@ -226,7 +236,7 @@ nav {
       color: inherit;
     }
 
-    @media #{$small-only} {
+    @include breakpoint(small only) {
       padding: 20px;
       font-size: .8rem;
     }
@@ -235,7 +245,7 @@ nav {
   .call-to-action {
     margin-top: 69px;
 
-    @media #{$small-only} {
+    @include breakpoint(small only) {
       margin-top: 20px;
     }
   }
@@ -245,7 +255,7 @@ nav {
 .container {
   padding-top: $header-height;
 
-  @media #{$small-only} {
+  @include breakpoint(small only) {
     padding-top: $header-height-small;
   }
 }
@@ -381,6 +391,10 @@ section {
 
       .trail {
         margin-top: 80px;
+
+        ul {
+          list-style-type: none;
+        }
 
         // h1:after {
         //   content: " ";
