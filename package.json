@@ -1,11 +1,16 @@
 {
   "name": "astromo-website",
-  "description": "",
-  "version": "0.0.1",
-  "homepage": "",
+  "description": "Astromo website",
+  "version": "1.0.0",
+  "homepage": "https://astromo.io/",
   "author": {
     "name": "Michiel De Mey",
     "email": "de.mey.michiel@gmail.com"
+  },
+  "scripts": {
+    "build": "npm run install && grunt dist && npm run build:docker",
+    "install": "bower install",
+    "build:docker": "docker build --tag astromo/www ."
   },
   "repository": {
     "type": "git",
