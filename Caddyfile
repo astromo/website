@@ -1,5 +1,6 @@
 astromo.io {
   root /var/www
+  ext .html
   gzip
   tls info@astromo.io
 }
