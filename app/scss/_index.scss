@@ -1,0 +1,26 @@
+@import 'vendor';
+
+.container.index {
+  height: 100%;
+
+  padding-top: 650px;
+  padding-top: calc(100vh - 200px);
+}
+
+section.index {
+  padding: 0;
+  text-align: center;
+
+  height: 200px;
+  max-width: 100% !important;
+
+  .icons {
+    display: block;
+  }
+
+  .columns {
+    min-height: 200px;
+    @include flex-grid-row(null, 100%, null, true, 0)
+    @include flex-grid-row-align(center, middle);
+  }
+}

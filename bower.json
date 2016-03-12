@@ -1,7 +1,7 @@
 {
   "name": "astromo-website",
   "dependencies": {
-    "foundation-sites": "^6.0.6",
+    "foundation-sites": "^6.1.1",
     "astromo-styles": "astromo/styles",
     "simple-line-icons": "^2.2.3"
   }

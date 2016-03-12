@@ -1,13 +1,47 @@
 ---
 title: API Design
 
-header-title: Building an API is difficult
-header-subtitle: Focus on what's important instead
+header-title: The Next Development
+header-subtitle: for the next product
 
 topic: index
 ---
 
-<section class="process center">
+<section class="index row align-middle">
+
+  <div class="columns small-12">
+    <h1>Our Services</h1>
+  </div>
+
+  <div class="microservices small-12 medium-6 large-3 columns">
+    <h1>
+      <i class="icons icon-layers"></i>
+      Microservices
+    </h1>
+  </div>
+
+  <div class="small-12 medium-6 large-3 columns">
+    <h1>
+      <i class="icons icon-options"></i>
+      Lorem
+    </h1>
+  </div>
+  <div class="small-12 medium-6 large-3 columns">
+    <h1>
+      <i class="icons icon-options"></i>
+      Ipsum
+    </h1>
+  </div>
+  <div class="small-12 medium-6 large-3 columns">
+    <h1>
+      <i class="icons icon-options"></i>
+      Dolor
+    </h1>
+  </div>
+
+</section>
+
+<!-- <section class="process center">
   <h1>We are here to help</h1>
   <p>Astromo is a product and services company focused on helping your company build great APIs.</p>
 
@@ -50,4 +84,4 @@ topic: index
     <div class="columns large-7 img">
       <img src="{{assets}}/documentation_large.png" alt="Documentation screenshot">
   </div>
-</section>
+</section> -->

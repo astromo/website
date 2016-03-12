@@ -12,7 +12,7 @@ topic: security
   <p>All data is transferred and encrypted through SSL.</p>
 
   <div class="row trails">
-    <div class="large-4 columns trail">
+    <div class="small-12 large-4 columns trail">
       <h1>SSL Security</h1>
       <p>Our servers are tested against all common SSL exploits to prevent data theft and attacks.</p>
       <hr>
@@ -26,7 +26,7 @@ topic: security
       <hr>
       <p>View our latest SSL Security Test: <a target="_new" href="https://www.ssllabs.com/ssltest/analyze.html?d=astromo.io&latest">SSL Report</a></p>
     </div>
-    <div class="large-8 columns trail">
+    <div class="small-12 large-8 columns trail">
       <img src="{{assets}}/ssltest.png" alt="">
     </div>
   </div>
