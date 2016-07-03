@@ -1,5 +1,6 @@
-FROM armhfbuild/caddy
+FROM abiosoft/caddy
 
-COPY dist /var/www
-COPY Caddyfile /etc/caddy/
+ADD dist /var/www
+ADD Caddyfile /etc/caddy/
 
+CMD ["--conf", "/etc/caddy/Caddyfile"]
