@@ -1,5 +1,5 @@
-astromo.io:80 {
-  root /var/www
+localhost, 0.0.0.0:80 {
+  root /var/www/
   ext .html
   gzip
 }
